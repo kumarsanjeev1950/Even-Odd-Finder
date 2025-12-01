@@ -1,2 +1,2 @@
 # Even-Odd-Finder
-A Code Repository For JavaScript Even-Odd-Finder.
+JavaScript Even-Odd-Finder & Table Generator.
