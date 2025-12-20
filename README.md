@@ -1,2 +1,2 @@
-# Even-Odd-Finder
-JavaScript Even-Odd-Finder & Table Generator.
+# glassmorphism-even-odd-finder
+A clean UI tool to check whether a number is even or odd using glassmorphism design.
