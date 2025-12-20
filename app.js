@@ -1,28 +1,43 @@
-function checkEvenOdd() {
-  const num = document.getElementById("numberInput").value;
-  const output = document.getElementById("output");
+// ----------------- Elements -----------------
+      const numberInput = document.getElementById("numberInput");
+      const output = document.getElementById("output");
+      const checkBtn = document.getElementById("checkBtn");
+      const tableBtn = document.getElementById("tableBtn");
 
-  if (num === "") {
-    output.innerText = "⚠️ Please enter a number!";
-  } else if (num % 2 === 0) {
-    output.innerText = `✅ ${num} is an Even number.`;
-  } else {
-    output.innerText = `🔹 ${num} is an Odd number.`;
-  }
-}
+      // ----------------- Reset output on input -----------------
+      numberInput.addEventListener("input", () => {
+        output.innerText = "";
+      });
 
-function generateTable() {
-  const num = document.getElementById("numberInput").value;
-  const output = document.getElementById("output");
+      // ----------------- Check Even or Odd -----------------
+      function checkEvenOdd() {
+        const num = numberInput.value;
 
-  if (num === "") {
-    output.innerText = "⚠️ Please enter a number!";
-    return;
-  }
+        if (num === "") {
+          output.innerText = "⚠️ Please enter a number!";
+        } else if (num % 2 === 0) {
+          output.innerText = `✅ ${num} is an Even number.`;
+        } else {
+          output.innerText = `🔹 ${num} is an Odd number.`;
+        }
+      }
 
-  let table = "";
-  for (let i = 1; i <= 10; i++) {
-    table += `${num} × ${i} = ${num * i}\n`;
-  }
-  output.innerText = table;
-}
+      // ----------------- Generate Table -----------------
+      function generateTable() {
+        const num = numberInput.value;
+
+        if (num === "") {
+          output.innerText = "⚠️ Please enter a number!";
+          return;
+        }
+
+        let table = "";
+        for (let i = 1; i <= 10; i++) {
+          table += `${num} × ${i} = ${num * i}\n`;
+        }
+        output.innerText = table;
+      }
+
+      // ----------------- Event Listeners -----------------
+      checkBtn.addEventListener("click", checkEvenOdd);
+      tableBtn.addEventListener("click", generateTable);
